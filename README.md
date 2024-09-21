@@ -2,23 +2,33 @@
 Repositório destinado para o armazenamento do Projeto de extensão da Faculdade de Ciências da Computação. Matéria: Desenvolvimento Rápido de Aplicações em Python
 
 
-# Controle de Estoque
+# Controle de Estoque - Projeto de Extensão
 
-Este é um projeto simples de Controle de Estoque desenvolvido com Flask, onde é possível adicionar produtos e registrar movimentações (entrada e saída) de estoque. A aplicação utiliza um banco de dados SQLite para armazenar as informações dos produtos e suas movimentações.
+Este projeto foi desenvolvido como parte do trabalho de extensão na disciplina de Desenvolvimento Rápido de Aplicações em Python. O objetivo principal é criar uma aplicação funcional de Controle de Estoque, permitindo a gestão eficiente de produtos e suas movimentações. Esta iniciativa busca aplicar os conhecimentos adquiridos ao longo do curso e contribuir com uma solução prática para a área de gestão de estoques.
+
+## Motivação
+
+A gestão de estoque é uma parte crítica em diversas áreas, desde pequenas empresas até grandes indústrias. Um controle inadequado pode levar a perdas financeiras e à insatisfação dos clientes. Este projeto visa:
+
+- **Praticidade**: Oferecer uma ferramenta simples e intuitiva para gerenciar produtos.
+- **Aprimoramento das Habilidades**: Permitir a aplicação de conceitos de programação, bancos de dados e desenvolvimento web.
+- **Contribuição**: Apresentar uma solução que pode ser ampliada e utilizada por pessoas que desejam gerenciar seu estoque de maneira eficiente.
 
 ## Tecnologias Utilizadas
 
-- Python
-- Flask
-- SQLAlchemy
-- SQLite
-- Bootstrap (para o design)
+- **Python**
+- **Flask**: Para o desenvolvimento web.
+- **SQLAlchemy**: Para a manipulação do banco de dados.
+- **SQLite**: Como banco de dados local.
+- **Bootstrap**: Para estilização da interface.
 
 ## Funcionalidades
 
-- **Visualizar Estoque**: Mostra a lista de produtos e suas quantidades.
-- **Adicionar Produto**: Permite adicionar novos produtos ao estoque.
-- **Registrar Movimentação**: Possibilita registrar entradas e saídas de produtos do estoque.
+- **Visualizar Estoque**: Exibição de produtos e suas quantidades atuais.
+- **Adicionar Produto**: Opção para adicionar novos produtos ao estoque.
+- **Registrar Movimentação**: Permite registrar entradas e saídas de produtos do estoque.
+
+## Estrutura do Projeto
 
 ## Estrutura do Projeto
 
