@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Registrar Movimentação</h1>
+<form action="/movimentacao" method="POST">
+    <div class="mb-3">
+        <label for="produto" class="form-label">Produto</label>
+        <select class="form-control" id="produto" name="produto" required>
+            {% for produto in produtos %}
+            <option value="{{ produto.id }}">{{ produto.nome }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="tipo" class="form-label">Tipo de Movimentação</label>
+        <select class="form-control" id="tipo" name="tipo" required>
+            <option value="entrada">Entrada</option>
+            <option value="saida">Saída</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="quantidade" class="form-label">Quantidade</label>
+        <input type="number" class="form-control" id="quantidade" name="quantidade" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar</button>
+</form>
+{% endblock %}
