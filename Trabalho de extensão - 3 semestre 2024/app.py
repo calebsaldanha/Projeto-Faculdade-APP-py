@@ -62,6 +62,22 @@ def movimentacao():
             flash('Erro ao registrar movimentação.', 'danger')
     
     return render_template('movimentacao.html', produtos=produtos)
+# Controle de mercadorias em trânsito
+@app.route('/transito', methods=['GET', 'POST'])
+def transito():
+    produtos = Produto.query.all()  # Carregar os produtos disponíveis
+    
+    if request.method == 'POST':
+        produto_id = request.form['produto']
+        quantidade = int(request.form['quantidade'])
+        
+        # Aqui você pode adicionar lógica para registrar o trânsito, se necessário
+        # Por enquanto, apenas uma mensagem de sucesso
+        flash('Movimentação em trânsito registrada com sucesso!', 'success')
+        return redirect(url_for('transito'))
+    
+    return render_template('transito.html', produtos=produtos)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
