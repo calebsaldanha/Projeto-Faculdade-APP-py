@@ -1,106 +1,95 @@
-# Projeto de Extensão Faculdade
-Repositório destinado para o armazenamento do Projeto de extensão da Faculdade de Ciências da Computação. Matéria: Desenvolvimento Rápido de Aplicações em Python
+# Controle de Estoque de Transporte - Projeto de Extensão
 
+## Descrição do Projeto
 
-# Controle de Estoque - Projeto de Extensão
+Este projeto foi desenvolvido como parte da disciplina de Desenvolvimento Rápido de Aplicações em Python para um curso de extensão universitária. O objetivo é criar uma aplicação web para controle de estoque e agregados em operações de transporte e logística, utilizando **Flask** e **SQLite**.
 
-Este projeto foi desenvolvido como parte do trabalho de extensão na disciplina de Desenvolvimento Rápido de Aplicações em Python. O objetivo principal é criar uma aplicação funcional de Controle de Estoque, permitindo a gestão eficiente de produtos e suas movimentações. Esta iniciativa busca aplicar os conhecimentos adquiridos ao longo do curso e contribuir com uma solução prática para a área de gestão de estoques.
-
-## Motivação
-
-A gestão de estoque é uma parte crítica em diversas áreas, desde pequenas empresas até grandes indústrias. Um controle inadequado pode levar a perdas financeiras e à insatisfação dos clientes. Este projeto visa:
-
-- **Praticidade**: Oferecer uma ferramenta simples e intuitiva para gerenciar produtos.
-- **Aprimoramento das Habilidades**: Permitir a aplicação de conceitos de programação, bancos de dados e desenvolvimento web.
-- **Contribuição**: Apresentar uma solução que pode ser ampliada e utilizada por pessoas que desejam gerenciar seu estoque de maneira eficiente.
-
-## Tecnologias Utilizadas
-
-- **Python**
-- **Flask**: Para o desenvolvimento web.
-- **SQLAlchemy**: Para a manipulação do banco de dados.
-- **SQLite**: Como banco de dados local.
-- **Bootstrap**: Para estilização da interface.
+O sistema permite:
+- Adicionar e visualizar resumos de entregas de produtos.
+- Registrar e gerenciar o controle de agregados, incluindo veículos, motoristas e fretes.
 
 ## Funcionalidades
 
-- **Visualizar Estoque**: Exibição de produtos e suas quantidades atuais.
-- **Adicionar Produto**: Opção para adicionar novos produtos ao estoque.
-- **Registrar Movimentação**: Permite registrar entradas e saídas de produtos do estoque.
+1. **Resumo de Transporte**:
+   - Registro de entregas e operações de transporte, com detalhes como peso, volume, tipo de veículo, nota fiscal, e destinatário.
+   - Exibição dos resumos registrados em uma tabela no dashboard da aplicação.
+
+2. **Controle de Agregado**:
+   - Registro de dados dos agregados, como placa do veículo, motorista, cliente e valores de frete.
+   - Visualização de todos os controles de agregados na aplicação.
+
+3. **Interface amigável**:
+   - Sistema de templates utilizando **Jinja2** para facilitar a adição e a visualização dos registros.
+   - Mensagens de sucesso ou erro em tempo real com o **Flask Flash**.
+
+4. **Banco de Dados**:
+   - Armazenamento dos dados de resumos e controle de agregados em um banco de dados SQLite.
+
+## Tecnologias Utilizadas
+
+- **Python**: Linguagem principal para o desenvolvimento da aplicação.
+- **Flask**: Framework utilizado para criar a aplicação web.
+- **SQLite**: Banco de dados leve utilizado para armazenar as informações.
+- **Jinja2**: Template engine para gerar as páginas HTML dinamicamente.
+- **HTML/CSS**: Frontend básico para a interface de usuário.
+- **Bootstrap**: Framework CSS para facilitar a estilização da interface.
 
 ## Estrutura do Projeto
 
-## Estrutura do Projeto
-
-```
-/seu_projeto
-│
-├── app.py                 # Arquivo principal da aplicação
-├── db.py                  # Configuração do banco de dados
-├── models.py              # Modelos de dados
-├── static                 # Diretório para arquivos estáticos (CSS, JS, etc.)
-│   └── styles.css         # Estilos personalizados
-└── templates              # Diretório para arquivos HTML
-    ├── base.html         # Layout base
-    ├── estoque.html      # Página do estoque
-    ├── adicionar.html     # Página para adicionar produtos
-    └── movimentacao.html  # Página para registrar movimentações
+```bash
+├── app.py                # Arquivo principal da aplicação Flask
+├── db.py                 # Configuração do banco de dados
+├── models.py             # Definição dos modelos de banco de dados (Resumo e ControleAgregado)
+├── templates/            # Páginas HTML renderizadas
+│   ├── base.html         # Template base para o layout
+│   ├── resumo.html       # Página que exibe o resumo de entregas
+│   ├── adicionar.html    # Página para adicionar novos resumos
+│   ├── adicionar_controle.html # Página para adicionar novos controles de agregados
+│   ├── controle_agregado.html  # Página que exibe os controles de agregados
+├── static/               # Arquivos estáticos (CSS, JS, etc.)
+│   └── styles.css        # Arquivo de estilos CSS
+└── estoque.db            # Banco de dados SQLite (gerado automaticamente)
 ```
 
-## Instalação
+## Como Executar o Projeto
+
+### Pré-requisitos
+- Python 3.x
+- pip
+
+### Instalação
 
 1. Clone o repositório:
-
    ```bash
-   git clone https://github.com/seu_usuario/seu_projeto.git
-   cd seu_projeto
+   git clone https://github.com/calebsaldanha/controle-estoque-transporte.git
    ```
-
-2. Crie um ambiente virtual:
-
+   
+2. Navegue até o diretório do projeto:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # Para Linux/Mac
-   venv\Scripts\activate     # Para Windows
+   cd controle-estoque-transporte
    ```
 
 3. Instale as dependências:
-
    ```bash
-   pip install Flask Flask-SQLAlchemy
+   pip install -r requirements.txt
    ```
 
-4. Crie o banco de dados:
-
-   Execute o arquivo `setup_db.py` para criar o banco de dados e as tabelas necessárias:
-
+4. Inicialize o banco de dados (caso ainda não tenha sido criado):
    ```bash
-   python setup_db.py
+   python db.py
    ```
 
 5. Execute a aplicação:
-
    ```bash
    python app.py
    ```
 
-   A aplicação estará disponível em `http://127.0.0.1:5000`.
-
-## Como Contribuir
-
-Sinta-se à vontade para contribuir com melhorias! Para isso:
-
-1. Faça um fork do projeto.
-2. Crie uma nova branch:
-   ```bash
-   git checkout -b minha-nova-contribuicao
+6. Acesse a aplicação no seu navegador:
    ```
-3. Faça suas alterações e commit:
-   ```bash
-   git commit -m 'Adicionei uma nova funcionalidade'
+   http://127.0.0.1:5000/
    ```
-4. Envie para o seu repositório:
-   ```bash
-   git push origin minha-nova-contribuicao
-   ```
-5. Abra um Pull Request.
+
+## Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para enviar **pull requests** ou abrir **issues** para relatar bugs ou sugerir melhorias.
+
