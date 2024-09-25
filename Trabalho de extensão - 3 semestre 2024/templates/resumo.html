@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Resumo</h1>
+<a href="/adicionar" class="btn btn-primary mb-3">Adicionar Resumo</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Validação Cremer</th>
+            <th scope="col">Período</th>
+            <th scope="col">Tipo Veículo</th>
+            <th scope="col">CTE</th>
+            <th scope="col">NF</th>
+            <th scope="col">Demais NFS</th>
+            <th scope="col">Peso</th>
+            <th scope="col">M3</th>
+            <th scope="col">Volume</th>
+            <th scope="col">Pallets</th>
+            <th scope="col">Valor NF</th>
+            <th scope="col">Data</th>
+            <th scope="col">Serviço</th>
+            <th scope="col">Destinatário</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for resumo in resumos %}
+        <tr>
+            <td>{{ resumo.validacao_cremer }}</td>
+            <td>{{ resumo.periodo }}</td>
+            <td>{{ resumo.tipo_veiculo }}</td>
+            <td>{{ resumo.cte }}</td>
+            <td>{{ resumo.nf }}</td>
+            <td>{{ resumo.demais_nfs }}</td>
+            <td>{{ resumo.peso }}</td>
+            <td>{{ resumo.m3 }}</td>
+            <td>{{ resumo.volume }}</td>
+            <td>{{ resumo.pallets }}</td>
+            <td>{{ resumo.valor_nf }}</td>
+            <td>{{ resumo.dt }}</td>
+            <td>{{ resumo.servico }}</td>
+            <td>{{ resumo.destinatario }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Controle de Agregado</h1>
+<a href="/adicionar_controle" class="btn btn-primary mb-3">Adicionar Controle</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Placa CTE</th>
+            <th scope="col">Frete APK</th>
+            <th scope="col">Frete AG</th>
+            <th scope="col">Motorista</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Romaneio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for controle in controles %}
+        <tr>
+            <td>{{ controle.data }}</td>
+            <td>{{ controle.placa_cte }}</td>
+            <td>{{ controle.frete_apk }}</td>
+            <td>{{ controle.frete_ag }}</td>
+            <td>{{ controle.motorista }}</td>
+            <td>{{ controle.cliente }}</td>
+            <td>{{ controle.romaneio }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

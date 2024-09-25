@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Adicionar Controle de Agregado</h1>
+<form method="POST">
+    <div class="mb-3">
+        <label for="data" class="form-label">Data</label>
+        <input type="date" class="form-control" id="data" name="data" required>
+    </div>
+    <div class="mb-3">
+        <label for="placa_cte" class="form-label">Placa CTE</label>
+        <input type="text" class="form-control" id="placa_cte" name="placa_cte" required>
+    </div>
+    <div class="mb-3">
+        <label for="frete_apk" class="form-label">Frete APK</label>
+        <input type="number" class="form-control" id="frete_apk" name="frete_apk" required>
+    </div>
+    <div class="mb-3">
+        <label for="frete_ag" class="form-label">Frete AG</label>
+        <input type="number" class="form-control" id="frete_ag" name="frete_ag">
+    </div>
+    <div class="mb-3">
+        <label for="motorista" class="form-label">Motorista</label>
+        <input type="text" class="form-control" id="motorista" name="motorista" required>
+    </div>
+    <div class="mb-3">
+        <label for="cliente" class="form-label">Cliente</label>
+        <input type="text" class="form-control" id="cliente" name="cliente" required>
+    </div>
+    <div class="mb-3">
+        <label for="romaneio" class="form-label">Romaneio</label>
+        <input type="text" class="form-control" id="romaneio" name="romaneio" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+</form>
+<a href="/controle_agregado" class="btn btn-secondary mt-3">Voltar</a>
+{% endblock %}

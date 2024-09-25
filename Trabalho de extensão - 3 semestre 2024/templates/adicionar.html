@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Adicionar Resumo</h1>
+<form method="POST">
+    <div class="mb-3">
+        <label for="validacao_cremer" class="form-label">Validação Cremer</label>
+        <input type="text" class="form-control" id="validacao_cremer" name="validacao_cremer" required>
+    </div>
+    <div class="mb-3">
+        <label for="periodo" class="form-label">Período</label>
+        <input type="text" class="form-control" id="periodo" name="periodo" required>
+    </div>
+    <div class="mb-3">
+        <label for="tipo_veiculo" class="form-label">Tipo Veículo</label>
+        <input type="text" class="form-control" id="tipo_veiculo" name="tipo_veiculo" required>
+    </div>
+    <div class="mb-3">
+        <label for="cte" class="form-label">CTE</label>
+        <input type="text" class="form-control" id="cte" name="cte" required>
+    </div>
+    <div class="mb-3">
+        <label for="nf" class="form-label">NF</label>
+        <input type="text" class="form-control" id="nf" name="nf" required>
+    </div>
+    <div class="mb-3">
+        <label for="demais_nfs" class="form-label">Demais NFS</label>
+        <input type="text" class="form-control" id="demais_nfs" name="demais_nfs">
+    </div>
+    <div class="mb-3">
+        <label for="peso" class="form-label">Peso</label>
+        <input type="number" class="form-control" id="peso" name="peso" required>
+    </div>
+    <div class="mb-3">
+        <label for="m3" class="form-label">M3</label>
+        <input type="number" class="form-control" id="m3" name="m3" required>
+    </div>
+    <div class="mb-3">
+        <label for="volume" class="form-label">Volume</label>
+        <input type="number" class="form-control" id="volume" name="volume" required>
+    </div>
+    <div class="mb-3">
+        <label for="pallets" class="form-label">Pallets</label>
+        <input type="number" class="form-control" id="pallets" name="pallets" required>
+    </div>
+    <div class="mb-3">
+        <label for="valor_nf" class="form-label">Valor NF</label>
+        <input type="number" class="form-control" id="valor_nf" name="valor_nf" required>
+    </div>
+    <div class="mb-3">
+        <label for="dt" class="form-label">Data</label>
+        <input type="date" class="form-control" id="dt" name="dt" required>
+    </div>
+    <div class="mb-3">
+        <label for="servico" class="form-label">Serviço</label>
+        <input type="text" class="form-control" id="servico" name="servico" required>
+    </div>
+    <div class="mb-3">
+        <label for="destinatario" class="form-label">Destinatário</label>
+        <input type="text" class="form-control" id="destinatario" name="destinatario" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+</form>
+<a href="/" class="btn btn-secondary mt-3">Voltar</a>
+{% endblock %}
